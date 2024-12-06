@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'ChiayiCity';
+  src: url('assets/fonts/ChiayiCity.ttf') format('truetype');
+}
+
+body {
+  font-family: ChiayiCity;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+  text-align: left;
+  line-height: 1.4;
+  margin: 20px;
+  gap: 6px;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1;
+  color: #333;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.thumbnail {
+width: 200px;
+height: 150px;
+margin-right: 15px;
+object-fit: cover;
+}
+
+.assignments ul {
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+}
+
+.assignments ul li {
+  margin: 10px 0;
+}
+
+.assignments-container {
+  overflow-x: auto;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.assignments-container::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+.assignments-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* 防止內容被壓縮 */
+  flex-shrink: 0;
+}
+
+.assignment-item {
+  display: flex;
+  align-items: center;
+  width: 33.333vw;
+  height: 100vh;
+  flex-shrink: 0;
+  padding: 0;
+  position: relative;
+}
+
+.assignment-item a img{
+  display: flex;
+  align-items: center;
+  width: 33.333vw;
+  height: 100vh;
+  flex-shrink: 0;
+  padding: 0;
+  position: relative;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.assignment-title {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform-origin: right bottom;
+  transform: rotate(90deg) translateY(2%);
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  padding: 5px 10px;
+  white-space: nowrap;
+  border-radius: 20px 20px 0 0;
+  backdrop-filter: blur(5px);
+}
+
+.assignment-item a:hover {
+  opacity: 0.9;
+}
+
+#a1 {
+  background-color:rgba(255, 218, 191, 0.7);
+}
+
+#a2 {
+  background-color: rgba(41, 65, 242, 0.7);
+}
+
+#a3 {
+  background-color: rgba(10, 10, 10, 0.7);
+}
+
+#a4 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#a5 {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+#a6 {
+  background-color: rgba(220, 220, 220, 0.7);
+}
+
+#a7 {
+  background-color: rgba(101, 137, 171, 0.7);
+}
+
+.a-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.assignment-main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+#sketch-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+#sketch-container.shrunk {
+  width: calc(100% - 33.333vw);
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 100;
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+}
+
+.sidebar.expanded {
+  width: 33.333vw;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: ChiayiCity;
+  font-size: 1rem;
+  color: #333;
+  transition: opacity 0.3s ease;
+  z-index: 101;
+  width: auto;
+  height: auto;
+  pointer-events: auto;
+}
+
+.sidebar.expanded .sidebar-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-content {
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+  height: 100%;
+  margin-top: 60px;
+  pointer-events: auto;
+}
+
+.sidebar.expanded .sidebar-content {
+  opacity: 1;
+}
+
+.sidebar h1 {
+  margin-bottom: 20px;
+}
+
+.description {
+  width: 100%;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #777;
+  margin-top: auto;
+}
+
+/* 添加平滑滾動效果 */
+html {
+  scroll-behavior: smooth;
+}
+
+.sidebar-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 102;
+    pointer-events: none;
+}
+
+.sidebar.expanded .sidebar-close {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar.a1-bg {
+  background-color: rgba(255, 186, 136, 0.9);
+}
+
+.sidebar.a2-bg {
+  background-color: rgba(73, 92, 236, 0.9);
+}
+
+.sidebar.a3-bg {
+  background-color: rgba(37, 37, 37, 0.9);
+}
+
+.sidebar.a4-bg {
+  background-color: rgba(224, 223, 223, 0.9);
+}
+
+.sidebar.a5-bg {
+  background-color: rgba(255, 28, 28, 0.9);
+}
+
+.sidebar.a6-bg {
+  background-color: rgba(192, 192, 192, 0.9);
+}
+
+.sidebar.a7-bg {
+  background-color: rgba(121, 159, 194, 0.9);
+}
