@@ -23,7 +23,7 @@ header {
   display: flex;
   flex-direction: column;
   position: fixed;
-    top: 20px;
+    top: 40px;
     left: 20px;
     z-index: 100;
   text-align: left;
@@ -316,4 +316,20 @@ html {
 
 .sidebar.a7-bg {
   background-color: rgba(121, 159, 194, 0.9);
+}
+
+.back-button {
+  position: absolute;
+  top: -30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: ChiayiCity;
+  font-size: 0.9rem;
+  color: rgba(37, 37, 37, 0.7);
+  z-index: 101;
+  width: auto;
+  height: auto;
+  pointer-events: auto;
 }
