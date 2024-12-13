@@ -1,5 +1,5 @@
 // Only apply horizontal scroll transformation on index page
-if (window.location.pathname.endsWith('ccportfolio') || window.location.pathname.endsWith('index.html')) {
+if (window.location.pathname.endsWith('ccportfolio/') || window.location.pathname.endsWith('index.html')) {
     function transformScroll(event) {
         // Prevent default scroll behavior
         event.preventDefault();
