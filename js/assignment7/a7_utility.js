@@ -161,6 +161,10 @@ function setupButton() {
     btnGroup.style("justify-content", "center");
     btnGroup.style("align-items", "center");
     btnGroup.style("gap", "20px");
+    btnGroup.style("position", "absolute");
+    btnGroup.style("bottom", "10px");
+    btnGroup.style("left", "50%");
+    btnGroup.style("transform", "translateX(-50%)");
 
     btn1 = createButton('Level 1');
     btn1.parent(btnGroup); // 設置按鈕的位置（相對於整個窗口）

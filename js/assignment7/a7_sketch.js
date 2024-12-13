@@ -29,7 +29,7 @@ function setup() {
   let div = createDiv("Peggy's<br>Autobiographical<br>Game");
   div.style("font-family", "DotGothic16");
   div.style("font-size", "32px");
-  div.position(32, 32);
+  div.position(38, 64);
 
   // let ins = createDiv("press arrow keys to move");
   // ins.style("display", "flex");
